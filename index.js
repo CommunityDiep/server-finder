@@ -1,4 +1,5 @@
 const express = require('express');
+const bodyParser = require('body-parser');
 const serverFinder = express();
 
 const servers = require('./servers.json');
