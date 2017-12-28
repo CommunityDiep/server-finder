@@ -5,7 +5,7 @@ serverFinder.use(bodyParser.json());
 
 const servers = require('./servers.json');
 
-serverFinder.get('/findServers', (req, res) => {
+serverFinder.post('/findServers', (req, res) => {
 
 });
 
