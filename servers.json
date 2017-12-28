@@ -4,5 +4,11 @@
 		"port": 8080,
 		"secure": false,
 		"gamemode": "classic"
+	},
+	{
+		"ip": "hello",
+		"port": 8080,
+		"secure": false,
+		"gamemode": "classic"
 	}
 ]
