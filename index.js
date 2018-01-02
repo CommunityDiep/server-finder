@@ -6,9 +6,13 @@ serverFinder.use(bodyParser.json());
 const servers = require('./servers.json');
 
 serverFinder.post('/findServers', (req, res) => {
-	res.send(servers.filter(function(item) {
-		return item.ip !== 'hello'
-	}));
+	res.send(req.body + filterize(servers, req.body));
 });
+
+function filterize(data, filters) {
+	return servers.filter(function(item) {
+		return item.ip !== 'hello'
+	});
+}
 
 serverFinder.listen(8081);
