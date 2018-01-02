@@ -7,7 +7,7 @@ serverFinder.use(bodyParser.json());
 const servers = require('./servers.json');
 
 serverFinder.post('/findServers', (req, res) => {
-	res.send(util.inspect(req.body) + util.inspect(filterize(servers, req.body)));
+	res.send(util.inspect(req.body) + JSON.stringify(filterize(servers, req.body), null, 2));
 });
 
 function filterize(data, filters) {
