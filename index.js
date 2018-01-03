@@ -19,11 +19,11 @@ function filterize(data, filters) {
 		// an incompatible type or empty object is no filters, by default
 		// plus performance
 		return data;
+	} else {
+		return servers.filter(function(item) {
+			return item.ip !== 'hello'
+		});
 	}
-
-	return servers.filter(function(item) {
-		return item.ip !== 'hello'
-	});
 }
 
 serverFinder.listen(8081);
