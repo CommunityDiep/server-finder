@@ -10,6 +10,12 @@ serverFinder.post('/findServers', (req, res) => {
 });
 
 function filterize(data, filters) {
+	if (typeof req.body !== "object" || req.body === {}) {
+		// an incompatible type or empty object is no filters, by default
+		// plus performance
+		return data;
+	}
+
 	return servers.filter(function(item) {
 		return item.ip !== 'hello'
 	});
