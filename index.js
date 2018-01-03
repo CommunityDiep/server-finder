@@ -6,7 +6,12 @@ serverFinder.use(bodyParser.json());
 const servers = require('./servers.json');
 
 serverFinder.post('/findServers', (req, res) => {
-	res.send(JSON.stringify(filterize(servers, req.body), null, 2));
+	try {
+		res.send(JSON.stringify(filterize(servers, req.body), null, 2));
+	} catch (error) {
+		// do nothing!
+		// don't reveal info to the public!
+	}
 });
 
 function filterize(data, filters) {
